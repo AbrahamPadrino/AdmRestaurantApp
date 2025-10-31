@@ -1,4 +1,4 @@
-# 📗 AdmRestaurantApp
+# 🍝 AdmRestaurantApp
 
 Aplicación para Android desarrollada con **Kotlin** y **Jetpack Compose** dedicada al control de registros de distintas Categorias y Platillos para presentar el menú de productos de un Restaurant.
 ---
