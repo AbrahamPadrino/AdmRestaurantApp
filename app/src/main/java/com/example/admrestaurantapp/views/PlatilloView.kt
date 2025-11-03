@@ -95,8 +95,8 @@ fun PlatilloView(
         floatingActionButton = {
             FloatingActionButton(
                 onClick = {
-                    platilloAddUpdate.value = "add"
                     showDialog.value = true
+                    platilloAddUpdate.value = "add"
                 },
                 containerColor = colorResource(id = R.color.azul_atlantico),
             ) {
@@ -142,6 +142,7 @@ fun DialogPlatilloAddEdit(
     var nomPlatillo by remember { mutableStateOf("") }
     var descPlatillo by remember { mutableStateOf("") }
     var precio by remember { mutableStateOf("") }
+    var calPlatillo by remember { mutableStateOf("") }
 
     var showCategorias by remember { mutableStateOf(false) }
     var catSeleccionado by remember { mutableStateOf("Seleccina una categoria") }
@@ -213,6 +214,19 @@ fun DialogPlatilloAddEdit(
                     singleLine = true
                 )
 
+                OutlinedTextField(
+                    value = calPlatillo,
+                    onValueChange = {
+                        calPlatillo = it
+                    },
+                    label = {
+                        Text(text = "Calorias del platillo")
+                    },
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
+                    maxLines = 1,
+                    singleLine = true
+                )
+
                 ExposedDropdownMenuBox(
                     modifier = Modifier
                         .padding(top = 8.dp),
@@ -277,6 +291,7 @@ fun DialogPlatilloAddEdit(
                         viewModel.validarCampos(
                             nomPlatillo,
                             precio,
+                            calPlatillo,
                             catSeleccionado
                         )
                     ) {
@@ -284,16 +299,19 @@ fun DialogPlatilloAddEdit(
                             nomPlatillo = nomPlatillo,
                             descPlatillo = descPlatillo,
                             precio = precio.toDouble(),
+                            calPlatillo = calPlatillo.toDouble(),
                             categoria = catSeleccionado
                         )
 
                         if (platilloAddUpdate.value == "add") {
                             viewModel.agregarPlatillo(platillo)
-                        } else {
+                        }
+                        else {
                             viewModel.editarPlatillo(platillo)
                         }
 
                         showDialog.value = false
+                        viewModel.obtenerPlatillos()
                     }
                 }
             ) {

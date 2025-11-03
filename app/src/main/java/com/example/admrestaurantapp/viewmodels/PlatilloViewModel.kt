@@ -95,11 +95,13 @@ class PlatilloViewModel: ViewModel() {
     fun validarCampos(
         nomPlatillo: String,
         precio: String,
+        calPlatillo: String,
         catSeleccionado: String
     ): Boolean {
         return if (
             nomPlatillo.isEmpty() ||
             precio.isEmpty() ||
+            calPlatillo.isEmpty() ||
             catSeleccionado.isEmpty()
         ) {
             false

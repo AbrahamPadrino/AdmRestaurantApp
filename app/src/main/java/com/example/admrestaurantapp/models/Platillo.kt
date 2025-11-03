@@ -9,6 +9,8 @@ data class Platillo(
     var descPlatillo: String = "",
     @SerializedName("precio")
     var precio: Double = 0.0,
+    @SerializedName("cal_platillo")
+    var calPlatillo: Double = 0.0,
     @SerializedName("nom_categoria")
     var categoria: String = ""
 )
