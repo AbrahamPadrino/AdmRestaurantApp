@@ -155,6 +155,7 @@ fun DialogPlatilloAddEdit(
             descPlatillo = platilloEdit.value.descPlatillo
         }
         precio = platilloEdit.value.precio.toString()
+        calPlatillo = platilloEdit.value.calPlatillo.toString()
         catSeleccionado = platilloEdit.value.categoria
     }
 
