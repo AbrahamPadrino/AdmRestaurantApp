@@ -1,6 +1,6 @@
 # 🍝 AdmRestaurantApp
 
-Aplicación para Android desarrollada con **Kotlin** y **Jetpack Compose** dedicada al control de registros de distintas Categorias y Platillos para presentar el menú de productos de un Restaurant.
+Aplicación para Android desarrollada con *Kotlin* y *Jetpack Compose* dedicada al control de registros de distintas Categorias y Platillos para presentar el menú de productos de un Restaurant.
 ---
 
 ## 📑 Requisitos
@@ -64,12 +64,12 @@ El proyecto sigue el patrón **MVVM (Model-View-ViewModel)**, separando claramen
 
 ## 🗂️ Estructura del proyecto
 ```plaintext
-AdminBibliotecaApp/
+AdmRestaurantApp/
 ├── app/                                        
 │   ├── src/
 │   │   ├── main/
 │   │   │   ├── AndroidManifest.xml
-│   │   │   ├── java/com/example/adminbibliotecaapp:                    
+│   │   │   ├── java/com/example/admrestaurantaapp:                    
 │   │   │   │            ├── models/
 │   │   │   │            ├── navigate/
 │   │   │   │            ├── network/
